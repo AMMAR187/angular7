@@ -16,12 +16,8 @@ export class DisplayComponent implements OnInit {
     this.getData.getAllData()
       .subscribe(res => this.messages = res);
     this.getData.CurrentData
-      .subscribe((mess) => {
-        if (mess == null)
-          this.message = "Theres no Messages yet";
-        else
-          this.message = mess;
-      });
+      .subscribe(mess => this.message = mess);
+
   }
 
 }

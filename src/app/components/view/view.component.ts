@@ -8,6 +8,7 @@ import { GetDataService } from 'src/app/services/get-data.service';
 })
 export class ViewComponent implements OnInit {
   message;
+  id;
   constructor(private getData: GetDataService) { }
 
   ngOnInit() {
@@ -15,6 +16,11 @@ export class ViewComponent implements OnInit {
       .subscribe(mess => this.message = mess);
     console.log(this.message);
 
+  }
+
+  findById(id) {
+    this.getData.getDataById(id)
+      .subscribe(res => this.message = res);
   }
 
 }

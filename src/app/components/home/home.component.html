@@ -9,19 +9,23 @@
     <label for="">Message:</label>
     <p>{{message.message}}</p>
   </div>
-  <form [formGroup]="Form" class="example-form" (ngSubmit)="onSubmit(Form.value)">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Your Name" required formControlName="username">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Email" required formControlName="email">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Your Phone" required formControlName="number">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Message" formControlName="message" required></textarea>
-    </mat-form-field>
-    <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!Form.valid">Submit</button>
-  </form>
+  <div class="content">
+    <h1>Fill the Form</h1>
+    <form [formGroup]="Form" class="example-form" (ngSubmit)="onSubmit(Form.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Your Name" required formControlName="username">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" required formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Your Phone" required formControlName="number">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Message" formControlName="message" required></textarea>
+      </mat-form-field>
+      <button class="submit-btn" color="primary" mat-raised-button type="submit"
+        [disabled]="!Form.valid">Submit</button>
+    </form>
+  </div>
 </div>

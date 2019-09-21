@@ -18,10 +18,11 @@ export class GetDataService {
   getAllData(): Observable<any> {
     return this.http.get(this.url + 'data');
   }
-  getData(id) {
+  getDataById(id) {
     return this.http.get(this.url + 'data/' + id);
   }
   postData(data) {
-    return this.http.post(this.url + 'data/', JSON.stringify(data));
+    return this.http.post(this.url + 'data/', data).subscribe(res => console.log(res));
+
   }
 }
