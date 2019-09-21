@@ -1,3 +1,12 @@
-<p>
-  view works!
-</p>
+<div class="content">
+  <div class="content" *ngIf="message">
+    <label>Name:</label>
+    <h3>{{message.username}}</h3>
+    <label for="">Email:</label>
+    <h3>{{message.email}}</h3>
+    <label for="">Number:</label>
+    <h3>{{message.number}}</h3>
+    <label for="">Message:</label>
+    <p>{{message.message}}</p>
+  </div>
+</div>

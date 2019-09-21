@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,15 +13,15 @@ export class GetDataService {
   CurrentData = this.DataSource.asObservable();
   constructor(private http: HttpClient) { }
   changeData(Data) {
-    this.DataSource.next(Data);
+    return this.DataSource.next(Data);
   }
-  getAllData(Data) {
-    this.http.get(this.url + 'data');
+  getAllData(): Observable<any> {
+    return this.http.get(this.url + 'data');
   }
   getData(id) {
-    this.http.get(this.url + 'data/' + id);
+    return this.http.get(this.url + 'data/' + id);
   }
   postData(data) {
-    this.http.post(this.url, JSON.stringify(data));
+    return this.http.post(this.url + 'data/', JSON.stringify(data));
   }
 }
